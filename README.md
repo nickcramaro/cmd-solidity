@@ -1,2 +1,17 @@
 # cmd-solidity
 project for practicing solidity
+
+## cmds
+solc = require('solc')
+source = `source code here`
+compiled = solc.compile(source)
+compiled.contracts[':ContractName'].bytecode
+abi = JSON.parse(compiled.contracts[':ContractName'].interface)
+
+Web3 = require('web3')
+web3 =  new Web3(new Web3.providers.HttpProvider('http://localhost:7545'))
+contract = new web3.eth.Contract(abi)
+
+web3.eth.getAccounts().then((result) => accounts = result)
+
+acct1 = accounts[0]
