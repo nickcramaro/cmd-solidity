@@ -20,5 +20,5 @@ bytecode = compiled.contracts[':ContractName'].bytecode
 
 contract.deploy({data: bytecode, arguments: [Arguements]}).send({from: acct1, gas: 500000}).then((result) => {instance = result})
 
-instance.methods.greet().send({from: acct1}).then(result => console.log(result))
+instance.methods.greet().call({from: acct1}).then(result => console.log(result))
 ```
