@@ -44,7 +44,9 @@ contract KGCoin is ERC20Interface {
     }
 
     function transfer(address receiver, uint amount) public returns (bool success) {
-        if (balances[msg.sender] < amount) {return;}
+        if (balances[msg.sender] < amount) {
+            return;
+        }
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
         Transfer(msg.sender, receiver, amount);
